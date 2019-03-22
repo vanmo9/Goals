@@ -1,9 +1,14 @@
 <h1>My Goals</h1>
 <hr>
 <div class="container">
+  <div class="container">
+    <div class="row">
+       <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
+    </div>
+</div>
     <div class="row" *ngFor="let goal of goals;let i = 'index'">
         <div class="row">
-            <h4 id="{{i}}" appStrikethrough>{{goal.name}}{{goal.description}}</h4>
+            <h4 id="{{i}}" appStrikethrough>{{goal.name}} {{goal.description}}</h4><br>
             <button class="btn btn-primary" (click)='toogleDetails(i)'>Toogle Details</button>
         </div>
 
